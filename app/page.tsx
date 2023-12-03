@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiChevronRight, FiLink } from "react-icons/fi";
 
 const socials = [
   {
@@ -33,13 +33,18 @@ export default function Home() {
             alt="banner"
             className="w-7 h-7 rounded-full"
           />
-          <span className="max-sm:hidden">Mark Rachapoom</span>
+          <span className="max-sm:hidden text-sm">Mark Rachapoom</span>
         </div>
 
         <div className="flex flex-row items-center justify-center gap-4">
           {socials.map((social) => {
             return (
-              <a href={social.url} target="_blank" key={social.name}>
+              <a
+                href={social.url}
+                target="_blank"
+                key={social.name}
+                className="opacity-50 hover:opacity-100 transition-opacity text-sm"
+              >
                 <span className="max-sm:text-sm">{social.name}</span>
               </a>
             );
@@ -113,7 +118,21 @@ export default function Home() {
 
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
-              <span className="text-2xl font-medium leading-tight">Merse</span>
+              <div className="flex flex-row items-center gap-3 w-full">
+                <span className="text-2xl font-medium leading-tight">
+                  Merse
+                </span>
+
+                <a
+                  href="https://www.merse.co"
+                  target="_blank"
+                  className="flex flex-row items-center text-neutral-300 gap-1 pl-4 pr-2 py-1 rounded-full border border-dark-divider hover:border-dark-dividerContrast transition-all"
+                >
+                  {/* <FiLink className="w-3 h-3"/> */}
+                  <span className="text-sm">merse.co</span>
+                  <FiArrowUpRight className="w-4 h-4 text-dark-text-secondary" />
+                </a>
+              </div>
 
               <p className="text-dark-text-secondary">
                 We&apos;re crafting tools that transform your everyday moments,
@@ -138,9 +157,22 @@ export default function Home() {
           {/* Project/Quickpitch */}
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
+              <div className="flex flex-row items-center gap-3 w-full">
+
               <span className="text-2xl font-medium leading-tight">
                 Quickpitch
               </span>
+
+                <a
+                  href="https://twitter.com/markrachapoom/status/1706440389010616825"
+                  target="_blank"
+                  className="flex flex-row items-center text-neutral-300 gap-1 pl-4 pr-2 py-1 rounded-full border border-dark-divider hover:border-dark-dividerContrast transition-all"
+                >
+                  {/* <FiLink className="w-3 h-3"/> */}
+                  <span className="text-sm">Demo on Twitter</span>
+                  <FiArrowUpRight className="w-4 h-4 text-dark-text-secondary" />
+                </a>
+              </div>
 
               <p className="text-dark-text-secondary">
                 Demo Day In Your Pocket: Discover startups on a Tinder-style
