@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
+import { FiArrowUpRight } from "react-icons/fi";
+
 const socials = [
   {
     name: "Twitter",
@@ -73,7 +75,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4 w-full h-screen">
             <div className="grid grid-rows-2 gap-4 w-full h-screen">
               <ImageCard
-                src="mark-naval.jpeg"
+                src="/mark-naval.jpeg"
                 alt="Mark & Naval"
                 caption="Taking a walk with Naval Ravikant for 2 hours"
               />
@@ -173,9 +175,7 @@ export default function Home() {
                 >
                   https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone
                 </a>
-
                 <br />
-
                 📖 More Detail:
                 <a
                   href="https://www.notion.so/markrachapoom/iOS-App-Diary-Dingo-top-3-worldwide-1e8599967eb64eeabae46d79634234a3"
@@ -205,15 +205,21 @@ const ImageCard: React.FC<{
   caption: string;
 }> = ({ src, alt, caption }) => {
   return (
-    <div className="relative flex flex-col border-dark-divider h-full overflow-clip group">
+    <div className="relative flex flex-col border-dark-divider h-full overflow-clip group hover:cursor-pointer">
       <img
         src={src}
         alt={alt}
-        className="w-full h-full object-cover filter grayscale transition-all duration-500 ease-in-out"
+        className="w-full h-full object-cover filter grayscale transition-all duration-500 ease-in-out group-hover:grayscale-0"
       />
 
-      <span className="py-2 absolute bottom-0 bg-black text-dark-text-secondary text-sm w-full">
+      <span className="flex flex-row py-2 absolute bottom-0 bg-black text-dark-text-secondary text-sm w-full justify-between items-center">
+
         {caption}
+
+        <div className="text-white opacity-30 group-hover:flex group-hover:opacity-100 transition-opacity">
+          <FiArrowUpRight />
+        </div>
+
       </span>
     </div>
   );
