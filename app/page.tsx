@@ -194,6 +194,48 @@ export default function Home() {
             />
           </div>
         </div>
+
+        <div className="flex flex-col items-start gap-12">
+          <h1 className="text-4xl font-medium text-center font-serif underline underline-offset-8 decoration-dark-dividerContrast">
+            Appeared On
+          </h1>
+
+          {/* Press/Hardeep */}
+          <div className="flex flex-col items-start gap-6">
+            <div className="flex flex-col items-start gap-3">
+              <span className="text-2xl font-medium leading-tight">
+                Emerging Innovators Podcast
+              </span>
+
+              <p className="text-dark-text-secondary">
+                &quot;Mark has taken the unconventional route multiple times by
+                self-teaching his iOS development, dropping out of university
+                and working for Silicon Valley startups. Currently, he is
+                building his own startup called Merce.co - we talk about it in
+                the episode - check it out. The best thing I love about Mark is
+                his ability to be vulnerable more than most people I have ever
+                met and his ability to put thought before speaking his words.
+                One of the best conversations I have ever had, beyond just this
+                podcast.&quot; — Hardeep
+              </p>
+            </div>
+
+            <img
+              src="/podcast.png"
+              alt="quickpitch screenshots"
+              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover"
+            />
+
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/WAUqqdBDVFQ?si=FxF5JyGdRh03ZAuJ"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </main>
   );
@@ -213,13 +255,11 @@ const ImageCard: React.FC<{
       />
 
       <span className="flex flex-row py-2 absolute bottom-0 bg-black text-dark-text-secondary text-sm w-full justify-between items-center">
-
         {caption}
 
         <div className="text-white opacity-30 group-hover:flex group-hover:opacity-100 transition-opacity">
           <FiArrowUpRight />
         </div>
-
       </span>
     </div>
   );
