@@ -24,7 +24,7 @@ const socials = [
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col min-h-screen items-center bg-black">
+    <main className="flex flex-col min-h-screen max-w-screen items-center bg-black">
       {/* sticky header */}
       <div className="flex sticky top-0 z-50 items-center justify-between w-full p-3 border-b border-dark-divider bg-[rgb(13,13,13,0.8)] backdrop-blur-xl">
         <div className="flex flex-row items-center gap-3">
@@ -58,7 +58,6 @@ export default function Home() {
       </div>
 
       {/* content */}
-
       <div className="flex flex-col w-full p-4 max-w-4xl z-0 h-auto gap-24 py-12">
         <div className="flex flex-col items-start gap-12">
           <div className="flex flex-col items-start gap-6">
@@ -117,11 +116,24 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-4 w-full h-screen">
             <div className="grid grid-rows-2 gap-4 w-full h-screen">
-              <ImageCard
-                src="/mark-naval.jpeg"
-                alt="Mark & Naval"
-                caption="Taking a walk with Naval Ravikant for 2 hours"
-              />
+
+              <div className="relative flex flex-col border-dark-divider h-full overflow-clip group hover:cursor-pointer">
+                <Image
+                  src={"/mark-naval.jpeg"}
+                  alt={"Mark & Naval"}
+                  layout="fill"
+                  // layout="fill"
+                  // objectFit="cover"
+                  // objectPosition="center"
+                  className="w-full h-full object-cover filter grayscale transition-all duration-500 ease-in-out bg-dark-background-secondary"
+                />
+
+                <div className="py-2 absolute bottom-0 bg-black text-dark-text-secondary text-sm w-full items-center">
+                  Taking a walk with <a href="https://www.twitter.com/naval" target="_blank">{" "}Naval Ravikant</a>
+                </div>
+
+              </div>
+
               <ImageCard
                 src="/nonce-kumar-mark.jpeg"
                 alt="Mark & Naval"
@@ -154,6 +166,7 @@ export default function Home() {
             Projects
           </h1>
 
+          {/* Project/Merse */}
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
               <div className="flex flex-row items-center gap-3 w-full">
@@ -193,7 +206,7 @@ export default function Home() {
 
                 <LinkCapsule
                   href="https://twitter.com/markrachapoom/status/1706440389010616825"
-                  label="Demo on Twitter"
+                  label="Demo"
                 />
               </div>
 
@@ -216,35 +229,38 @@ export default function Home() {
           {/* Project/Diary Dingo */}
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
-              <div className="flex flex-row items-center gap-3 w-full">
+              <div className="flex flex-row items-center gap-3 w-full max-sm:flex-col max-sm:items-start">
                 <span className="text-2xl font-medium leading-tight">
                   Diary Dingo
                 </span>
 
-                <LinkCapsule
-                  href="https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone"
-                  label="App Store"
-                />
-                <LinkCapsule
-                  href="https://www.notion.so/markrachapoom/iOS-App-Diary-Dingo-top-3-worldwide-1e8599967eb64eeabae46d79634234a3"
-                  label="More Detail"
-                />
+                <div className="flex flex-row gap-3">
+                  <LinkCapsule
+                    href="https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone"
+                    label="App Store"
+                  />
+                  <LinkCapsule
+                    href="https://www.notion.so/markrachapoom/iOS-App-Diary-Dingo-top-3-worldwide-1e8599967eb64eeabae46d79634234a3"
+                    label="Detail"
+                  />
+                </div>
               </div>
 
               <p className="text-dark-text-secondary">
                 It hit top 3 in less than 24 hours in lifestyle category after
                 the first launch on the Apple App Store.
-                <br/>
-                <br/>
-                Diary Dingo makes the chapter of your life
-                private, shareable, and clean. While privacy is prioritized due
-                to the fact that the app is secured by FaceID, TouchID, Passcode
-                and 0% of your personal data is collected, shareable content
-                comes in play. You can also share your diary on Twitter,
-                Instagram, Snapchat, Facebook, Line, iMessages and more.
-                <br/>
-                <br/>
-                Also, it&apos;s my first personal iOS project ever, and built for fun in the summer of 2021!
+                <br />
+                <br />
+                Diary Dingo makes the chapter of your life private, shareable,
+                and clean. While privacy is prioritized due to the fact that the
+                app is secured by FaceID, TouchID, Passcode and 0% of your
+                personal data is collected, shareable content comes in play. You
+                can also share your diary on Twitter, Instagram, Snapchat,
+                Facebook, Line, iMessages and more.
+                <br />
+                <br />
+                Also, it&apos;s my first personal iOS project ever, and built
+                for fun in the summer of 2021!
               </p>
             </div>
 
@@ -266,7 +282,7 @@ export default function Home() {
           {/* Press/Hardeep */}
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
-              <div className="flex flex-row items-center gap-3 w-full">
+              <div className="flex flex-row items-center gap-3 w-full max-[500px]:flex-col max-[500px]:items-start">
                 <span className="text-2xl font-medium leading-tight">
                   Emerging Innovators Podcast
                 </span>
@@ -275,6 +291,7 @@ export default function Home() {
                   href="https://www.youtube.com/watch?v=WAUqqdBDVFQ"
                   label="YouTube"
                 />
+
               </div>
 
               <p className="text-dark-text-secondary">
@@ -320,12 +337,6 @@ const ImageCard: React.FC<{
 }> = ({ src, alt, caption }) => {
   return (
     <div className="relative flex flex-col border-dark-divider h-full overflow-clip group hover:cursor-pointer">
-      {/* <img
-        src={src}
-        alt={alt}
-        className="w-full h-full object-cover filter grayscale transition-all duration-500 ease-in-out group-hover:grayscale-0"
-      /> */}
-
       <Image
         src={src}
         alt={alt}
@@ -333,15 +344,11 @@ const ImageCard: React.FC<{
         // layout="fill"
         // objectFit="cover"
         // objectPosition="center"
-        className="w-full h-full object-cover filter grayscale transition-all duration-500 ease-in-out group-hover:grayscale-0 bg-dark-background-secondary"
+        className="w-full h-full object-cover filter grayscale transition-all duration-500 ease-in-out bg-dark-background-secondary"
       />
 
       <span className="flex flex-row py-2 absolute bottom-0 bg-black text-dark-text-secondary text-sm w-full justify-between items-center">
         {caption}
-
-        <div className="text-white opacity-30 group-hover:flex group-hover:opacity-100 transition-opacity">
-          <FiArrowUpRight />
-        </div>
       </span>
     </div>
   );
@@ -358,7 +365,7 @@ const LinkCapsule: React.FC<{
       className="group flex flex-row items-center text-neutral-300 gap-1 pl-4 pr-2 py-1 rounded-full border border-dark-divider hover:border-dark-dividerContrast transition-all no-underline"
     >
       {/* <FiLink className="w-3 h-3"/> */}
-      <span className="text-sm">{label}</span>
+      <span className="text-sm line-clamp-1">{label}</span>
       <FiArrowUpRight className="w-[14px] h-[14px] text-dark-text-secondary group-hover:text-white transition-all " />
     </a>
   );
