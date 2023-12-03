@@ -28,9 +28,10 @@ export default function Home() {
       {/* sticky header */}
       <div className="flex sticky top-0 z-50 items-center justify-between w-full p-3 border-b border-dark-divider bg-[rgb(13,13,13,0.8)] backdrop-blur-xl">
         <div className="flex flex-row items-center gap-3">
-
           <Image
-            src={"https://pbs.twimg.com/profile_images/1669924632881942529/uVVtVMaK_400x400.jpg"}
+            src={
+              "https://pbs.twimg.com/profile_images/1669924632881942529/uVVtVMaK_400x400.jpg"
+            }
             alt="banner"
             width={28}
             height={28}
@@ -47,7 +48,7 @@ export default function Home() {
                 href={social.url}
                 target="_blank"
                 key={social.name}
-                className="opacity-50 hover:opacity-100 transition-opacity text-sm"
+                className="opacity-50 hover:opacity-100 transition-opacity text-sm no-underline"
               >
                 <span className="max-sm:text-sm">{social.name}</span>
               </a>
@@ -60,7 +61,7 @@ export default function Home() {
 
       <div className="flex flex-col w-full p-4 max-w-4xl z-0 h-auto gap-24 py-12">
         <div className="flex flex-col items-start gap-12">
-          <div className="flex flex-col items-start gap-4">
+          <div className="flex flex-col items-start gap-6">
             <h1 className="text-4xl font-medium text-center font-serif">
               Mark Rachapoom
             </h1>
@@ -69,17 +70,50 @@ export default function Home() {
               and former software engineer for a startup in Silicon Valley who
               can design and build iOS, Website, Full-Stack apps.
             </p>
-          </div>
 
-          {/* <div className="flex flex-row items-center justify-between gap-4 w-full">
-              {socials.map((social) => {
-                return (
-                  <a href={social.url} target="_blank" key={social.name} className="flex items-center justify-center w-full rounded-full border p-2 border-dark-divider hover:border-dark-dividerContrast transition-all">
-                    <span className="">{social.name}</span>
-                  </a>
-                );
-              })}
-            </div> */}
+            <ul className="list-disc list-inside">
+              <li>
+                Vercel AI Accelerator Fellow: 6 weeks. 40 participants. $850k in
+                credits.
+              </li>
+              <li>
+                Co-Founder of{" "}
+                <a href="https://www.merse.co" target="_blank">
+                  Merse
+                </a>
+              </li>
+              <li>
+                Rebel @{" "}
+                <a href="https://nonce.community/" target="_blank">
+                  Nonce Community
+                </a>{" "}
+                (논스) in Seoul
+              </li>
+
+              <li>
+                Creator of{" "}
+                <a
+                  href="https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone"
+                  target="_blank"
+                >
+                  Diary Dingo.
+                </a>{" "}
+                — it hit top 3 in less than 24 hours in lifestyle category after
+                the first launch on the Apple App Store
+              </li>
+
+              <li>
+                Founding Engineer at{" "}
+                <a href="https://twitter.com/SerendipityPRM" target="_blank">
+                  Serendipity
+                </a>{" "}
+                and{" "}
+                <a href="https://twitter.com/0xMonument" target="_blank">
+                  Monument
+                </a>
+              </li>
+            </ul>
+          </div>
 
           <div className="grid grid-cols-2 gap-4 w-full h-screen">
             <div className="grid grid-rows-2 gap-4 w-full h-screen">
@@ -127,15 +161,7 @@ export default function Home() {
                   Merse
                 </span>
 
-                <a
-                  href="https://www.merse.co"
-                  target="_blank"
-                  className="flex flex-row items-center text-neutral-300 gap-1 pl-4 pr-2 py-1 rounded-full border border-dark-divider hover:border-dark-dividerContrast transition-all"
-                >
-                  {/* <FiLink className="w-3 h-3"/> */}
-                  <span className="text-sm">merse.co</span>
-                  <FiArrowUpRight className="w-4 h-4 text-dark-text-secondary" />
-                </a>
+                <LinkCapsule href="https://www.merse.co" label="merse.co" />
               </div>
 
               <p className="text-dark-text-secondary">
@@ -161,20 +187,14 @@ export default function Home() {
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
               <div className="flex flex-row items-center gap-3 w-full">
+                <span className="text-2xl font-medium leading-tight">
+                  Quickpitch
+                </span>
 
-              <span className="text-2xl font-medium leading-tight">
-                Quickpitch
-              </span>
-
-                <a
+                <LinkCapsule
                   href="https://twitter.com/markrachapoom/status/1706440389010616825"
-                  target="_blank"
-                  className="flex flex-row items-center text-neutral-300 gap-1 pl-4 pr-2 py-1 rounded-full border border-dark-divider hover:border-dark-dividerContrast transition-all"
-                >
-                  {/* <FiLink className="w-3 h-3"/> */}
-                  <span className="text-sm">Demo on Twitter</span>
-                  <FiArrowUpRight className="w-4 h-4 text-dark-text-secondary" />
-                </a>
+                  label="Demo on Twitter"
+                />
               </div>
 
               <p className="text-dark-text-secondary">
@@ -191,37 +211,40 @@ export default function Home() {
               height={720}
               className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover bg-dark-background-secondary"
             />
-            
           </div>
 
           {/* Project/Diary Dingo */}
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
-              <span className="text-2xl font-medium leading-tight">
-                Diary Dingo
-              </span>
+              <div className="flex flex-row items-center gap-3 w-full">
+                <span className="text-2xl font-medium leading-tight">
+                  Diary Dingo
+                </span>
+
+                <LinkCapsule
+                  href="https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone"
+                  label="App Store"
+                />
+                <LinkCapsule
+                  href="https://www.notion.so/markrachapoom/iOS-App-Diary-Dingo-top-3-worldwide-1e8599967eb64eeabae46d79634234a3"
+                  label="More Detail"
+                />
+              </div>
 
               <p className="text-dark-text-secondary">
-                My first personal iOS project ever, and built for fun in the
-                summer of 2021 :P
-                <br />
-                🌐 App Store: 
-                <a
-                  href="https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone"
-                  target="_blank"
-                  className="underline text-neutral-300"
-                >
-                  https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone
-                </a>
-                <br />
-                📖 More Detail:
-                <a
-                  href="https://www.notion.so/markrachapoom/iOS-App-Diary-Dingo-top-3-worldwide-1e8599967eb64eeabae46d79634234a3"
-                  target="_blank"
-                  className="underline text-neutral-300"
-                >
-                  https://www.notion.so/markrachapoom/iOS-App-Diary-Dingo-top-3-worldwide-1e8599967eb64eeabae46d79634234a3
-                </a>
+                It hit top 3 in less than 24 hours in lifestyle category after
+                the first launch on the Apple App Store.
+                <br/>
+                <br/>
+                Diary Dingo makes the chapter of your life
+                private, shareable, and clean. While privacy is prioritized due
+                to the fact that the app is secured by FaceID, TouchID, Passcode
+                and 0% of your personal data is collected, shareable content
+                comes in play. You can also share your diary on Twitter,
+                Instagram, Snapchat, Facebook, Line, iMessages and more.
+                <br/>
+                <br/>
+                Also, it&apos;s my first personal iOS project ever, and built for fun in the summer of 2021!
               </p>
             </div>
 
@@ -232,7 +255,6 @@ export default function Home() {
               height={720}
               className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover bg-dark-background-secondary"
             />
-
           </div>
         </div>
 
@@ -244,19 +266,26 @@ export default function Home() {
           {/* Press/Hardeep */}
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
-              <span className="text-2xl font-medium leading-tight">
-                Emerging Innovators Podcast
-              </span>
+              <div className="flex flex-row items-center gap-3 w-full">
+                <span className="text-2xl font-medium leading-tight">
+                  Emerging Innovators Podcast
+                </span>
+
+                <LinkCapsule
+                  href="https://www.youtube.com/watch?v=WAUqqdBDVFQ"
+                  label="YouTube"
+                />
+              </div>
 
               <p className="text-dark-text-secondary">
                 &quot;Mark has taken the unconventional route multiple times by
                 self-teaching his iOS development, dropping out of university
                 and working for Silicon Valley startups. Currently, he is
-                building his own startup called Merce.co - we talk about it in
-                the episode - check it out. The best thing I love about Mark is
-                his ability to be vulnerable more than most people I have ever
-                met and his ability to put thought before speaking his words.
-                One of the best conversations I have ever had, beyond just this
+                building his own startup called Merse - we talk about it in the
+                episode - check it out. The best thing I love about Mark is his
+                ability to be vulnerable more than most people I have ever met
+                and his ability to put thought before speaking his words. One of
+                the best conversations I have ever had, beyond just this
                 podcast.&quot; — Hardeep
               </p>
             </div>
@@ -315,5 +344,22 @@ const ImageCard: React.FC<{
         </div>
       </span>
     </div>
+  );
+};
+
+const LinkCapsule: React.FC<{
+  href: string;
+  label: string;
+}> = ({ href, label }) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      className="group flex flex-row items-center text-neutral-300 gap-1 pl-4 pr-2 py-1 rounded-full border border-dark-divider hover:border-dark-dividerContrast transition-all no-underline"
+    >
+      {/* <FiLink className="w-3 h-3"/> */}
+      <span className="text-sm">{label}</span>
+      <FiArrowUpRight className="w-[14px] h-[14px] text-dark-text-secondary group-hover:text-white transition-all " />
+    </a>
   );
 };
