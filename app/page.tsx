@@ -28,11 +28,15 @@ export default function Home() {
       {/* sticky header */}
       <div className="flex sticky top-0 z-50 items-center justify-between w-full p-3 border-b border-dark-divider bg-[rgb(13,13,13,0.8)] backdrop-blur-xl">
         <div className="flex flex-row items-center gap-3">
-          <img
-            src="https://pbs.twimg.com/profile_images/1669924632881942529/uVVtVMaK_400x400.jpg"
+
+          <Image
+            src={"https://pbs.twimg.com/profile_images/1669924632881942529/uVVtVMaK_400x400.jpg"}
             alt="banner"
-            className="w-7 h-7 rounded-full"
+            width={28}
+            height={28}
+            className="w-7 h-7 rounded-full bg-dark-background-secondary"
           />
+
           <span className="max-sm:hidden text-sm">Mark Rachapoom</span>
         </div>
 
@@ -144,7 +148,6 @@ export default function Home() {
 
             <iframe
               width="560"
-              height="315"
               src="https://www.youtube.com/embed/RSO1GCPq8r8?si=nO3mU2n0n6rfjfiz"
               title="YouTube video player"
               // frameborder="0"
@@ -181,11 +184,14 @@ export default function Home() {
               </p>
             </div>
 
-            <img
-              src="/quickpitch.png"
+            <Image
+              src={"/quickpitch.png"}
               alt="quickpitch screenshots"
-              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover"
+              width={1280}
+              height={720}
+              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover bg-dark-background-secondary"
             />
+            
           </div>
 
           {/* Project/Diary Dingo */}
@@ -219,11 +225,14 @@ export default function Home() {
               </p>
             </div>
 
-            <img
-              src="/diary-dingo.png"
-              alt="quickpitch screenshots"
-              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover"
+            <Image
+              src={"/diary-dingo.png"}
+              alt="diary dingo screenshots"
+              width={1280}
+              height={720}
+              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover bg-dark-background-secondary"
             />
+
           </div>
         </div>
 
@@ -252,10 +261,12 @@ export default function Home() {
               </p>
             </div>
 
-            <img
-              src="/podcast.png"
-              alt="quickpitch screenshots"
-              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover"
+            <Image
+              src={"/podcast.png"}
+              alt="podcast screenshots"
+              width={1280}
+              height={720}
+              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover bg-dark-background-secondary"
             />
 
             <iframe
@@ -280,10 +291,20 @@ const ImageCard: React.FC<{
 }> = ({ src, alt, caption }) => {
   return (
     <div className="relative flex flex-col border-dark-divider h-full overflow-clip group hover:cursor-pointer">
-      <img
+      {/* <img
         src={src}
         alt={alt}
         className="w-full h-full object-cover filter grayscale transition-all duration-500 ease-in-out group-hover:grayscale-0"
+      /> */}
+
+      <Image
+        src={src}
+        alt={alt}
+        layout="fill"
+        // layout="fill"
+        // objectFit="cover"
+        // objectPosition="center"
+        className="w-full h-full object-cover filter grayscale transition-all duration-500 ease-in-out group-hover:grayscale-0 bg-dark-background-secondary"
       />
 
       <span className="flex flex-row py-2 absolute bottom-0 bg-black text-dark-text-secondary text-sm w-full justify-between items-center">
