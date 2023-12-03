@@ -7,7 +7,7 @@ const socials = [
     url: "https://www.twitter.com/markrachapoom",
   },
   {
-    name: "Github",
+    name: "GitHub",
     url: "https://www.github.com/markrachapoom",
   },
   {
@@ -111,7 +111,6 @@ export default function Home() {
 
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
-
               <span className="text-2xl font-medium leading-tight">Merse</span>
 
               <p className="text-dark-text-secondary">
@@ -137,21 +136,63 @@ export default function Home() {
           {/* Project/Quickpitch */}
           <div className="flex flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3">
-              <span className="text-2xl font-medium leading-tight">Quickpitch</span>
+              <span className="text-2xl font-medium leading-tight">
+                Quickpitch
+              </span>
 
               <p className="text-dark-text-secondary">
-                Demo Day In Your Pocket: Discover startups on a Tinder-style platform: founders pitch in 15 seconds, refine through feedback, and connect with VCs.
+                Demo Day In Your Pocket: Discover startups on a Tinder-style
+                platform: founders pitch in 15 seconds, refine through feedback,
+                and connect with VCs.
               </p>
             </div>
 
             <img
               src="/quickpitch.png"
               alt="quickpitch screenshots"
-              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl"
+              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover"
             />
-
           </div>
 
+          {/* Project/Diary Dingo */}
+          <div className="flex flex-col items-start gap-6">
+            <div className="flex flex-col items-start gap-3">
+              <span className="text-2xl font-medium leading-tight">
+                Diary Dingo
+              </span>
+
+              <p className="text-dark-text-secondary">
+                My first personal iOS project ever, and built for fun in the
+                summer of 2021 :P
+                <br />
+                🌐 App Store: 
+                <a
+                  href="https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone"
+                  target="_blank"
+                  className="underline text-neutral-300"
+                >
+                  https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone
+                </a>
+
+                <br />
+
+                📖 More Detail:
+                <a
+                  href="https://www.notion.so/markrachapoom/iOS-App-Diary-Dingo-top-3-worldwide-1e8599967eb64eeabae46d79634234a3"
+                  target="_blank"
+                  className="underline text-neutral-300"
+                >
+                  https://www.notion.so/markrachapoom/iOS-App-Diary-Dingo-top-3-worldwide-1e8599967eb64eeabae46d79634234a3
+                </a>
+              </p>
+            </div>
+
+            <img
+              src="/diary-dingo.png"
+              alt="quickpitch screenshots"
+              className="w-full aspect-video h-auto border border-dark-divider rounded-2xl object-cover"
+            />
+          </div>
         </div>
       </div>
     </main>
