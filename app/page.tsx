@@ -71,22 +71,35 @@ export default function Home() {
             </p>
 
             <ul className="list-disc list-inside">
-              <li>
-                Vercel AI Accelerator Fellow: 6 weeks. 40 participants. $850k in
-                credits.
-              </li>
+
               <li>
                 Co-Founder of{" "}
                 <a href="https://www.merse.co" target="_blank">
                   Merse
                 </a>
               </li>
+
+              <li>
+                <a href="https://vercel.com/blog/ai-accelerator-participants" target="_blank">
+                  Vercel AI Accelerator Fellow
+                </a>
+                : 6 weeks. 40 participants. $850k in credits.
+              </li>
+
               <li>
                 Rebel @{" "}
                 <a href="https://nonce.community/" target="_blank">
-                  Nonce Community
+                  Nonce Community (논스)
                 </a>{" "}
-                (논스) in Seoul
+                in Seoul
+              </li>
+
+              <li>
+                Resident @{" "}
+                <a href="https://joinarcadia.org/" target="_blank">
+                  Arcadia
+                </a>
+                , hacker house in Berkeley
               </li>
 
               <li>
@@ -95,10 +108,10 @@ export default function Home() {
                   href="https://apps.apple.com/app/diary-dingo/id1580242680?platform=iphone"
                   target="_blank"
                 >
-                  Diary Dingo.
+                  Diary Dingo
                 </a>{" "}
-                — it hit top 3 in less than 24 hours in lifestyle category after
-                the first launch on the Apple App Store
+                — hit top 3 in &lt;24 hours in lifestyle category after
+                the first launch on App Store
               </li>
 
               <li>
@@ -111,12 +124,21 @@ export default function Home() {
                   Monument
                 </a>
               </li>
+
+              {/* Talent House full-grant scholarships to Paris (1% acceptance) */}
+
+              <li>
+                <a href="https://www.markrachapoom.com/Talent-House-full-grant-scholarships-to-Paris-1-acceptance-a5060215ce5649ebbe8a2a3b0fa241fc" target="_blank">
+                  Talent Protocol Fellow {" "}
+                </a>
+                — a recipient of a full-grant Talent House scholarship to Paris
+              </li>
+
             </ul>
           </div>
 
           <div className="grid grid-cols-2 gap-4 w-full h-screen">
             <div className="grid grid-rows-2 gap-4 w-full h-screen">
-
               <div className="relative flex flex-col border-dark-divider h-full overflow-clip group hover:cursor-pointer">
                 <Image
                   src={"/mark-naval.jpeg"}
@@ -129,9 +151,12 @@ export default function Home() {
                 />
 
                 <div className="py-2 absolute bottom-0 bg-black text-dark-text-secondary text-sm w-full items-center">
-                  Taking a walk with <a href="https://www.twitter.com/naval" target="_blank">{" "}Naval Ravikant</a>
+                  Taking a walk with{" "}
+                  <a href="https://www.twitter.com/naval" target="_blank">
+                    {" "}
+                    Naval Ravikant
+                  </a>
                 </div>
-
               </div>
 
               <ImageCard
@@ -291,7 +316,6 @@ export default function Home() {
                   href="https://www.youtube.com/watch?v=WAUqqdBDVFQ"
                   label="YouTube"
                 />
-
               </div>
 
               <p className="text-dark-text-secondary">
