@@ -2,21 +2,31 @@ import Image from "next/image";
 import React from "react";
 
 import { FiArrowUpRight, FiChevronRight, FiLink } from "react-icons/fi";
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 const socials = [
   {
+    icon: <FaXTwitter cclassName="w-[18px] h-[18px]" />,
     name: "Twitter",
     url: "https://www.twitter.com/markrachapoom",
   },
   {
+    icon: <FaGithub className="w-[18px] h-[18px]" />,
     name: "GitHub",
     url: "https://www.github.com/markrachapoom",
   },
   {
+    icon: <FaLinkedinIn className="w-[18px] h-[18px]" />,
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/markrachapoom",
   },
   {
+    icon: <FaInstagram className="w-[18px] h-[18px]" />,
     name: "Instagram",
     url: "https://www.instagram.com/markrachapoom",
   },
@@ -65,13 +75,13 @@ export default function Home() {
               Mark Rachapoom
             </h1>
             <p>
-              Hey there, I&apos;m Mark Rachapoom, a 21-year-old college dropout
-              and former software engineer for a startup in Silicon Valley who
-              can design and build iOS, Website, Full-Stack apps.
+              Hey there, I&apos;m Mark Rachapoom, a 21-year-old founder, college
+              dropout, and former software engineer for a startup in Silicon
+              Valley who can build iOS, web, and full-stack apps. I can also
+              design at industry standards.
             </p>
 
             <ul className="list-disc list-inside">
-
               <li>
                 Co-Founder of{" "}
                 <a href="https://www.merse.co" target="_blank">
@@ -80,7 +90,10 @@ export default function Home() {
               </li>
 
               <li>
-                <a href="https://vercel.com/blog/ai-accelerator-participants" target="_blank">
+                <a
+                  href="https://vercel.com/blog/ai-accelerator-participants"
+                  target="_blank"
+                >
                   Vercel AI Accelerator Fellow
                 </a>
                 : 6 weeks. 40 participants. $850k in credits.
@@ -110,12 +123,12 @@ export default function Home() {
                 >
                   Diary Dingo
                 </a>{" "}
-                — hit top 3 in &lt;24 hours in lifestyle category after
-                the first launch on App Store
+                — hit top 3 in &lt;24 hours in lifestyle category after the
+                first launch on App Store
               </li>
 
               <li>
-                Founding Engineer at{" "}
+                Founding Software Engineer at{" "}
                 <a href="https://twitter.com/SerendipityPRM" target="_blank">
                   Serendipity
                 </a>{" "}
@@ -128,12 +141,14 @@ export default function Home() {
               {/* Talent House full-grant scholarships to Paris (1% acceptance) */}
 
               <li>
-                <a href="https://www.markrachapoom.com/Talent-House-full-grant-scholarships-to-Paris-1-acceptance-a5060215ce5649ebbe8a2a3b0fa241fc" target="_blank">
-                  Talent Protocol Fellow {" "}
+                <a
+                  href="https://www.markrachapoom.com/Talent-House-full-grant-scholarships-to-Paris-1-acceptance-a5060215ce5649ebbe8a2a3b0fa241fc"
+                  target="_blank"
+                >
+                  Talent Protocol Fellow{" "}
                 </a>
                 — a recipient of a full-grant Talent House scholarship to Paris
               </li>
-
             </ul>
           </div>
 
@@ -347,6 +362,34 @@ export default function Home() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               className="w-full aspect-video h-auto border border-dark-divider rounded-2xl"
             ></iframe>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-start gap-12">
+          <h1 className="text-4xl font-medium text-center font-serif underline underline-offset-8 decoration-dark-dividerContrast">
+            Contact
+          </h1>
+
+          {/* grid contact */}
+
+          <div className="grid grid-cols-2 w-full gap-3">
+            {socials.map((social) => {
+              return (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  className="group flex flex-row items-center justify-between p-5 max-sm:p-4 w-full bg-dark-background-secondary no-underline hover:opacity-100 border border-dark-divider hover:border-dark-dividerContrast text-dark-text-secondary hover:text-white transition-all"
+                  target="_blank"
+                >
+                  <div className="flex flex-row gap-3 items-center">
+                    <div>{social.icon}</div>
+                    <span className="text-sm">{social.name}</span>
+                  </div>
+
+                  <FiArrowUpRight className="w-[18px] h-[18px]" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
