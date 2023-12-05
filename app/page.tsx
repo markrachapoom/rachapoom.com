@@ -1,13 +1,18 @@
-import Image from "next/image";
+"use client";
+
 import React from "react";
+import Image from "next/image";
 
 import { FiArrowUpRight, FiChevronRight, FiLink } from "react-icons/fi";
 import {
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
+  FaPlay,
   FaXTwitter,
 } from "react-icons/fa6";
+import Tweet from "@/components/tweet";
+import clsx from "clsx";
 
 const socials = [
   {
@@ -33,6 +38,10 @@ const socials = [
 ];
 
 export default function Home() {
+  const airchatVideoRef = React.useRef<HTMLVideoElement>(null);
+  const [isAirchatVideoPlaying, setIsAirchatVideoPlaying] =
+    React.useState(false);
+
   return (
     <main className="flex flex-col min-h-screen max-w-screen items-center bg-black">
       {/* sticky header */}
@@ -365,6 +374,75 @@ export default function Home() {
           </div>
         </div>
 
+        {/* wall of love (testimonials) section */}
+        <div className="flex flex-col items-start gap-12">
+          <div className="flex flex-col items-start gap-6">
+            <h1 className="text-4xl font-medium text-center font-serif underline underline-offset-8 decoration-dark-dividerContrast">
+              Wall of Love
+            </h1>
+
+            <span className="text-dark-text-secondary">
+              Tweet from{" "}
+              <a href="https://twitter.com/rrhoover" target="_blank">
+                Ryan Hoover
+              </a>
+              , Founder of Product Hunt; and {" "}
+              <a
+                href="https://www.getairchat.com/sigil/sideprojects?r=afcfab29-9896-4ba0-b547-52d8d6b8197d"
+                target="_blank"
+              >
+                Airchat
+              </a>
+              {" "} from{" "}
+              <a href="https://twitter.com/naval" target="_blank">
+                Naval Ravikant
+              </a>
+              , Founder of AngelList.
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 w-full max-sm:flex max-sm:flex-col">
+            <Tweet />
+
+            <div className="relative w-full h-full border border-dark-divider aspect-video rounded-2xl">
+              <video
+                ref={airchatVideoRef}
+                src="/naval-airchat.mp4"
+                className="absolute w-full h-full rounded-xl object-cover"
+                onPlay={() => {
+                  setIsAirchatVideoPlaying(true);
+                }}
+                onPause={() => {
+                  setIsAirchatVideoPlaying(false);
+                }}
+                loop={true}
+                controls
+              />
+
+              {/* play/pause button */}
+              {/* <button
+                onClick={() => {
+                  if (airchatVideoRef?.current?.paused) {
+                    airchatVideoRef?.current?.play();
+                    setIsAirchatVideoPlaying(true);
+                  } else {
+                    airchatVideoRef?.current?.pause();
+                    setIsAirchatVideoPlaying(false);
+                  }
+                }}
+                className="absolute flex flex-row items-center justify-center w-full h-full"
+              >
+                <FaPlay
+                  className={clsx("w-8 h-8 text-white shadow-2xl", {
+                    "opacity-0": isAirchatVideoPlaying,
+                  })}
+                />
+              </button> */}
+            </div>
+          </div>
+        </div>
+
+        {/* contact section */}
         <div className="flex flex-col items-start gap-12">
           <h1 className="text-4xl font-medium text-center font-serif underline underline-offset-8 decoration-dark-dividerContrast">
             Contact
