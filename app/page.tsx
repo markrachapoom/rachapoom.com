@@ -386,14 +386,14 @@ export default function Home() {
               <a href="https://twitter.com/rrhoover" target="_blank">
                 Ryan Hoover
               </a>
-              , Founder of Product Hunt; and {" "}
+              , Founder of Product Hunt; and{" "}
               <a
                 href="https://www.getairchat.com/sigil/sideprojects?r=afcfab29-9896-4ba0-b547-52d8d6b8197d"
                 target="_blank"
               >
                 Airchat
-              </a>
-              {" "} from{" "}
+              </a>{" "}
+              from{" "}
               <a href="https://twitter.com/naval" target="_blank">
                 Naval Ravikant
               </a>
@@ -404,20 +404,19 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4 w-full max-sm:flex max-sm:flex-col">
             <Tweet />
 
-            <div className="relative w-full h-full border border-dark-divider aspect-video rounded-2xl">
+            <div className="relative w-full h-full border border-dark-divider aspect-video rounded-2xl overflow-clip">
               <video
                 ref={airchatVideoRef}
-                src="/naval-airchat.mp4"
                 className="absolute w-full h-full rounded-xl object-cover"
-                onPlay={() => {
-                  setIsAirchatVideoPlaying(true);
-                }}
-                onPause={() => {
-                  setIsAirchatVideoPlaying(false);
-                }}
-                loop={true}
+                onPlay={() => setIsAirchatVideoPlaying(true)}
+                onPause={() => setIsAirchatVideoPlaying(false)}
+                // adding background photo
+                poster="/naval-airchat-poster.png"
+                loop
                 controls
-              />
+              >
+                <source src="/naval-airchat.mp4" type="video/mp4" />
+              </video>
 
               {/* play/pause button */}
               {/* <button

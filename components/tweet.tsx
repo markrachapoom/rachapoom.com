@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const Tweet: React.FC = ({}) => {
   return (
     <div
-      className="flex flex-col border border-dark-divider rounded-xl p-5 w-full h-full gap-3 bg-dark-background-secondary no-underline cursor-pointer transition-colors hover:border-dark-dividerContrast"
+      className="flex flex-col border border-dark-divider rounded-xl p-5 w-full h-full gap-3 bg-dark-background-secondary no-underline cursor-pointer transition-all hover:border-dark-dividerContrast"
       onClick={() => {
         window.open(
           "https://twitter.com/rrhoover/status/1654879487014719488",
@@ -36,7 +36,7 @@ const Tweet: React.FC = ({}) => {
         <FaXTwitter className="w-6 h-6" />
       </div>
 
-      <p lang="en" dir="ltr" className="text-lg">
+      <p lang="en" dir="ltr" className="text-lg max-sm:text-base">
         <span className="text-[#1DA1F2]">@markrachapoom</span> saw your
         Journal-to-Comic project on Airchat. Impressive. :)
       </p>
